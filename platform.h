@@ -7,10 +7,11 @@
 #if defined __linux__ || defined __linux
     #define LINUX 1
     #define WINDOWS 0
-    #define RPI 0
 
     #ifdef __arm__
     #define RPI 1
+    #else
+    #define RPI 0
     #endif
     #include "plaf/plaf_linux.cpp"
 #else 
