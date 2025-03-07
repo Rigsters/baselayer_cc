@@ -9,8 +9,14 @@
     #define WINDOWS 0
 
     #ifdef __arm__
-    #define RPI 1
+        #define RPI 1
     #else
+        #ifdef __aarch64__
+            #define RPI 1
+        #endif
+    #endif
+
+    #ifndef RPI
     #define RPI 0
     #endif
     #include "plaf/plaf_linux.cpp"

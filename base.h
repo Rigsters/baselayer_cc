@@ -16,7 +16,7 @@ typedef uint32_t u32;
 
 
 #ifdef __arm__
-#warning "__arm__ detected: u64 typedef'd to 32bit"
+#warning "WARN: __arm__ detected: u64 typedef'd to 32bit"
 typedef uint32_t u64;
 #else
 typedef uint64_t u64;
