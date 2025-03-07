@@ -10,10 +10,9 @@
 
     #ifdef __arm__
         #define RPI 1
-    #else
-        #ifdef __aarch64__
-            #define RPI 1
-        #endif
+    #endif
+    #ifdef __aarch64__
+        #define RPI 1
     #endif
 
     #ifndef RPI
