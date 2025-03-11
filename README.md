@@ -1,6 +1,6 @@
 # baselayer
 
-Base layer written in C-style C++.
+Written in C-style C++:
 
 - Memory allocation & List
 - Vector & matrix 3D math
@@ -12,7 +12,7 @@ Base layer written in C-style C++.
 - Algorithms: Octree, Index sets, Tokenizer
 - Utils: file I/O, cmd-line args
 
-# dependencies (optional)
+## dependencies (optional)
 
 libglew-dev
 libglfw3-dev
