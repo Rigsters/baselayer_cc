@@ -268,12 +268,14 @@ Str StrJoinInsertChar(MArena *a, StrLst *strs, char insert) {
     return join;
 }
 Str StrTrim(MArena *a, Str s, char t) {
-    if (s.str[0] == t) {
-        s.str++;
-        s.len -=1;
-    }
-    if (s.str[s.len-1] == t) {
-        s.len -=1;
+    if (s.len) {
+        if (s.str[0] == t) {
+            s.str++;
+            s.len -=1;
+        }
+        if (s.str[s.len-1] == t) {
+            s.len -=1;
+        }
     }
     return s;
 }

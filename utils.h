@@ -223,13 +223,20 @@ struct FInfo {
     char *BuildNameZ(const char *prefix, const char *suffix, const char *ext) {
         return StrZeroTerm( this->BuildName(prefix, suffix, ext) );
     }
+    Str StripDirname() {
+        Str filename = StrL("");
+        filename = StrCat(filename, basename);
+        filename = StrCat(filename, ".");
+        filename = StrCat(filename, ext);
+        return filename;
+    }
     void Print() {
-        StrPrint("file : ", name, "\n");
-        StrPrint("ext  : ", ext, "\n");
-        StrPrint("bnme : ", basename, "\n");
-        StrPrint("dir  : ", dirname, "\n");
+        StrPrint("name      : ", name, "\n");
+        StrPrint("extension : ", ext, "\n");
+        StrPrint("basename  : ", basename, "\n");
+        StrPrint("dirname   : ", dirname, "\n");
         Str rebuilt = StrPathBuild(dirname, basename, ext);
-        StrPrint("rebt : ", rebuilt, "\n");
+        StrPrint("rebuilt   : ", rebuilt, "\n");
     }
 };
 FInfo FInfoGet(Str pathname) {
